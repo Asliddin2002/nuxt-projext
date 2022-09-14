@@ -29,8 +29,8 @@
         </p>
       </div>
       <BrandSlider />
-      <div class="flex gap-2">
-        <div class="w-1/5 font-sans font-semibold text box-border">
+      <div class="lg:flex gap-2 xsm:flex-col lg:flex-row ">
+        <div class="lg:w-1/5 font-sans font-semibold text box-border xsm:w-full">
           <div v-for="parentcat in categoryList" :key="parentcat.parent_category_id">
             <div
               v-for="subcat in parentcat.sub_categories"
@@ -60,12 +60,12 @@
             </div>
           </div>
         </div>
-        <div class="gap-2 h-auto box-border">
-          <div v-for="parentcat in categoryList" :key="parentcat.parent_category_id" class="flex">
+        <div class="gap-2 h-auto box-border xsm:order-1">
+          <div v-for="parentcat in categoryList" :key="parentcat.parent_category_id" class="flex-wrap flex justify-center">
             <div
               v-for="subcat in parentcat.sub_categories"
               :key="subcat.sub_category_id"
-              class="shadow-sm rounded center p-0.5 m-0.37 cursor-pointer relative group"
+              class="shadow-sm rounded center p-0.5 m-0.37 cursor-pointer relative group "
             >
               <img
                 :src="require(`~/assets/images/${subcat.sub_category_image}`)"
@@ -274,6 +274,19 @@ export default {
               child_categories: [
                 {
                   child_category_id: '57d7ec66-8c28-45d6-af4f-7f63d23de385',
+                  child_category_name: ' iPhone 1 pro max ',
+                  child_category_image: 'subCat.jpg',
+                },
+              ],
+            },
+            {
+              sub_category_id: '5wd7ec66-8we8-45d6-af4f-7fr3d23de38a',
+              sub_category_name: 'Telefonlar sssswew',
+              sub_category_image: 'subCat.jpg',
+              sub_category_child_count: 10,
+              child_categories: [
+                {
+                  child_category_id: '57d7ec66-8c28-45d6-aref-7f63d23de385',
                   child_category_name: ' iPhone 1 pro max ',
                   child_category_image: 'subCat.jpg',
                 },
