@@ -11,7 +11,8 @@
                 items-center
                 py-4
                 xsm:py-0.5 xsm:justify-start
-                gap-0.75
+                <!-- gap-0.75 -->
+                space-x-0.35
                 bg-white
                 w-full
               "

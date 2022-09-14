@@ -13,7 +13,7 @@
           <span class="text-green font-semibold cursor-pointer">roʻyxatdan</span> oʻting !!!
         </p>
         <h1 class="font-semibold text-4xl my-4 text-green xsm:text-center">{{ $t('registration.welcome') }}</h1>
-        <LogupPage />
+        <LogupPage :inputData="inputData" :inputValidate="inputValidate" />
       </div>
     </Container>
     <Footer />
@@ -31,6 +31,18 @@ export default {
   components: { Header, Navbar, Container, Footer, LogupPage },
   data() {
     return {
+      inputData: {
+                phone: "",
+                password: "",
+                firstName: "",
+                passwordConfirmation: ""
+            },
+            inputValidate: {
+                phoneValidate: false,
+                passwordValidate: false,
+                firstNameValidate: false,
+                passwordConfirmationValidate: false,
+            },
         categories: [
         {
           id: '054654654',
