@@ -16,7 +16,7 @@
           oʻting !!!
         </p>
         <h1 class="font-semibold text-4xl my-4 text-green xsm:text-center">{{ $t('registration.welcome') }}</h1>
-        <LoginPage />
+        <LoginPage :inputData="inputData" :inputValidate="inputValidate" />
       </div>
     </Container>
     <Footer />
@@ -34,6 +34,14 @@ export default {
   components: { LoginPage, Header, Navbar, Container, Footer },
   data() {
     return {
+      inputData:{
+                phone:'',
+                password:'',
+            },
+            inputValidate:{
+                phoneValidate:false,
+                passwordValidate:false
+            },
         categories: [
         {
           id: '054654654',

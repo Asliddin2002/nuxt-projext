@@ -4,7 +4,7 @@
     <div class="sticky z-50 top-0 shadow-sm">
       <Navbar :categories="categories" />
     </div>
-    <BgBlur v-show="modal" />
+    <BgBlur  v-show="modal" />
     <Container>
       <PaymentModal v-show="modal" :cart="cart" />
       <CartItems />
@@ -36,6 +36,7 @@ export default {
     },
 
   },
+
   
   data() {
     return {
