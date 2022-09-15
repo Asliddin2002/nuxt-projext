@@ -11,9 +11,9 @@
             <div class="flex xsm:flex-wrap lg:flex-nowrap xsm: justify-center xsm:gap-3  sm:gap-4 my-5 ">
                 <div v-for="payment in payments" :key="payment.name"
                     class="xsm:w-2/5 xl:w-1/4 px-3 py-3 flex items-center justify-center rounded-md active:shadow-md cursor-pointer bg-gray">
-                <nuxt-link :to="localePath(`/cart/${payment.name}`)">
-                    <img :src="require(`~/assets/svg/${payment.img}.svg`)" class=" bg-transparent" alt="Paymart">
-                </nuxt-link>
+                    <nuxt-link :to="localePath(`/cart/${payment.name}`)">
+                        <img :src="require(`~/assets/svg/${payment.img}.svg`)" class=" bg-transparent" alt="Paymart">
+                    </nuxt-link>
                 </div>
             </div>
             <h3 class="font-semibold mb-3">Mahsulot (lar)</h3>
@@ -70,13 +70,16 @@
                 </div>
             </div>
             <button class="bg-green mt-4 mb-4
-         text-white py-0.5 w-full font-semibold font-sans rounded-md outline-none border-green">Haridni rasmiylashtirish</button>
+         text-white py-0.5 w-full font-semibold font-sans rounded-md outline-none border-green">Haridni
+                rasmiylashtirish</button>
             <div class="text-center">To'lovlar bo'yicha savollaringiz bo'lsa, iltimos, bizga qo'ng'iroq qiling
-              <br/> <span class="text-green">+998 71 202 06 06</span> </div>
-              <div class="text-center flex justify-center mt-3  text-red">
-                <p class=" w-9/12 ">Oylik to'lov miqdori indikativ hisoblanadi va yakuniy to'lov jadvalidan farq qilishi mumkin. Muddatli to’lov uchun javobgarlik 
-tanlagan hamkorimiz zimmasiga yuklanadi</p>
-              </div>
+                <br /> <span class="text-green">+998 71 202 06 06</span>
+            </div>
+            <div class="text-center flex justify-center mt-3  text-red">
+                <p class=" w-9/12 ">Oylik to'lov miqdori indikativ hisoblanadi va yakuniy to'lov jadvalidan farq qilishi
+                    mumkin. Muddatli to’lov uchun javobgarlik
+                    tanlagan hamkorimiz zimmasiga yuklanadi</p>
+            </div>
         </div>
 
     </div>
@@ -93,32 +96,32 @@ export default {
         },
     },
     methods: {
-            hideModalFunc(){
-                this.$store.dispatch("modal/hideModalFunc") 
-            },
+        hideModalFunc() {
+            this.$store.dispatch("modal/hideModalFunc")
         },
-        data() {
-            return {
-                payments:[
-                    {
-                        name:"paymart",
-                        img:"Paymart"
-                    },
-                    {
-                        name:"Davrmobile",
-                        img:"Davr"
-                    },
-                    {
-                        name:"intend",
-                        img:"Intent"
-                    },
-                    {
-                        name:"alifnasiya",
-                        img:"Alif"
-                    }
-                ]
-            }
-        }, 
+    },
+    data() {
+        return {
+            payments: [
+                {
+                    name: "paymart",
+                    img: "Paymart"
+                },
+                {
+                    name: "Davrmobile",
+                    img: "Davr"
+                },
+                {
+                    name: "intend",
+                    img: "Intent"
+                },
+                {
+                    name: "alifnasiya",
+                    img: "Alif"
+                }
+            ]
+        }
+    },
 
 }
 </script>

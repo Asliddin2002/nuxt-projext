@@ -42,20 +42,21 @@
 <script>
 export default {
     name: "LoginPage",
+    props: {
+        inputData: {
+            type: Object | Array,
+            required: true,
+            default: [],
+        },
+        inputValidate: {
+            type: Object | Array,
+            required: true,
+            default: [],
+        }
+    },
     data() {
         return {
-            inputData: {
-                phone: "",
-                password: "",
-                firstName: "",
-                passwordConfirmation: ""
-            },
-            inputValidate: {
-                phoneValidate: false,
-                passwordValidate: false,
-                firstNameValidate: false,
-                passwordConfirmationValidate: false,
-            }
+           
         };
     },
     methods: {
@@ -64,14 +65,26 @@ export default {
             if (this.inputData.phone == "") {
                 this.inputValidate.phoneValidate = true;
             }
+            else if (this.inputData.phone){
+                this.inputValidate.phoneValidate = false;
+            }
             if (this.inputData.password == "") {
                 this.inputValidate.passwordValidate = true;
+            }
+            else if (this.inputData.password){
+                this.inputValidate.passwordValidate = false;
             }
             if (this.inputData.firstName == "") {
                 this.inputValidate.firstNameValidate = true;
             }
+            else if (this.inputData.firstName){
+                this.inputValidate.firstNameValidate = false;
+            }
             if (this.inputData.passwordConfirmation == "") {
                 this.inputValidate.passwordConfirmationValidate = true;
+            }
+            else if (this.inputData.passwordConfirmation){
+                this.inputValidate.passwordConfirmationValidate = false
             }
         }
     },
