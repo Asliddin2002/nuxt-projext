@@ -8,7 +8,7 @@
             <h1 class="my-4 text-3xl font-semibold text-center font-sans"> <span class="text-green"> “Paymart”</span>
                 mudatli to'lov xizmati</h1>
             <div class=" gap-3 lg:flex justify-between">
-                <div class="flex flex-wrap gap-3 justify-center  self-start mt-3">
+                <div class="flex flex-wrap gap-3 justify-center lg: w-4/5  self-start mt-3">
                     <div v-for="product in cart" :key="product.id"
                         class="shadow-sm xsm:w-2/5 sm:1/3 md:w-1/5  px-1 py-1 text-center rounded-md flex flex-col align-middle">
                         <div class="flex items-center justify-center">
