@@ -40,6 +40,3 @@ export default {
   components: { Container, FooterNavbar },
 }
 </script>
-
-<style scoped>
-</style>

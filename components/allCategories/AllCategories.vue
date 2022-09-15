@@ -1,9 +1,5 @@
 <template>
   <div>
-    <Header />
-    <div>
-      <Navbar :categories="categories" />
-    </div>
     <Container>
       <div class="flex justify-start items-baseline gap-0.37">
         <nuxt-link :to="localePath(`/`)">
@@ -114,7 +110,7 @@
         </div>
       </div>
     </Container>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -126,107 +122,6 @@ export default {
   name: 'AllCategories',
   data() {
     return {
-      categories: [
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun katta ',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-              },
-            ],
-          },
-        },
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun katta ',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-              },
-            ],
-          },
-        },
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun katta ',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-              },
-            ],
-          },
-        },
-      ],
       categoryList: [
         {
           parent_category_id: '57d7ec66-8c28-45d6-af4f-7f63d23de38w',
@@ -310,7 +205,5 @@ export default {
 }
 </script>
 
-<style scoped>
-</style>
 
   

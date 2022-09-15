@@ -11,6 +11,3 @@ export default {
   components: { AllProductsbyCategory },
 }
 </script>
-
-<style scoped>
-</style>
