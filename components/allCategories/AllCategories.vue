@@ -29,7 +29,7 @@
         </p>
       </div>
       <BrandSlider />
-      <div class="lg:flex gap-2 xsm:flex-col lg:flex-row ">
+      <div class="lg:flex gap-2 xsm:flex-col lg:flex-row">
         <div class="lg:w-1/5 font-sans font-semibold text box-border xsm:w-full">
           <div v-for="parentcat in categoryList" :key="parentcat.parent_category_id">
             <div
@@ -42,6 +42,7 @@
                   {{ subcat.sub_category_name }}
                 </p>
               </div>
+
               <div
                 v-for="childcat in subcat.child_categories"
                 :key="childcat.child_category_id"
@@ -55,17 +56,23 @@
                   text-sm
                 "
               >
-                {{ childcat.child_category_name }}
+                <!-- <nuxt-link :to="localePath(`/allProductsbyCategory/${childcat.child_category_name}`)">
+                  {{ childcat.child_category_name }}
+                </nuxt-link> -->
               </div>
             </div>
           </div>
         </div>
         <div class="gap-2 h-auto box-border xsm:order-1">
-          <div v-for="parentcat in categoryList" :key="parentcat.parent_category_id" class="flex-wrap flex justify-center">
+          <div
+            v-for="parentcat in categoryList"
+            :key="parentcat.parent_category_id"
+            class="flex-wrap flex justify-center"
+          >
             <div
               v-for="subcat in parentcat.sub_categories"
               :key="subcat.sub_category_id"
-              class="shadow-sm rounded center p-0.5 m-0.37 cursor-pointer relative group "
+              class="shadow-sm rounded center p-0.5 m-0.37 cursor-pointer relative group"
             >
               <img
                 :src="require(`~/assets/images/${subcat.sub_category_image}`)"
