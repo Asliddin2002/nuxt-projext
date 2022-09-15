@@ -40,7 +40,7 @@
               pt-0.5
             "
           >
-            <div v-for="(item, index) in categories" :key="index">
+            <div v-for="item in categories" :key="item.id">
               <div class="flex">
                 <div class="parentCat">
                   <div class="h-auto">
@@ -75,7 +75,7 @@
                   </div>
                   <div class="flex-col rounded-b">
                     <div class="SubCaregory rounded-b">
-                      <p class="text-green font-sans text font-bold mb-2 hover:text-green hover:border-b hover:border-green leading-none cursor-pointer" :key="item.index">
+                      <p class="text-green font-sans text font-bold mb-2 hover:text-green hover:border-b hover:border-green leading-none cursor-pointer" :key="item.sub_category.id">
                         <nuxt-link
                           :to="
                             localePath(`/${item.sub_category.title_name}`)
@@ -84,11 +84,11 @@
                           {{ item.sub_category.title_name }}
                         </nuxt-link>
                       </p>
-                      <ul v-for="(cat, index) in item.sub_category.products" :key="index">
+                      <ul v-for="cat in item.sub_category.products" :key="cat.id">
                         <li class="text-black text font-normal font-sans hover:text-green hover:border-b hover:border-green leading-none cursor-pointer py-0.37">
-                          <nuxt-link :to="localePath(`/${cat.product_name}`)">
+                          <!-- <nuxt-link :to="localePath(`/${cat.product_name}`)"> -->
                             {{ cat.product_name }}
-                          </nuxt-link>
+                          <!-- </nuxt-link> -->
                         </li>
                       </ul>
                     </div>
@@ -107,13 +107,6 @@
 <script>
 export default {
   name: 'CatalogCategories',
-  props: {
-    categories: {
-      type: Array | Object,
-      required: true,
-      default: () => [],
-    },
-  },
 
   data() {
     return {
