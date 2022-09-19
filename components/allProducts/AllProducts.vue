@@ -1,9 +1,5 @@
 <template>
   <div>
-    <!-- <Header />
-    <div>
-      <Navbar :categories="categories" />
-    </div> -->
     <Container>
       <div class="flex justify-start items-baseline gap-0.37">
         <nuxt-link :to="localePath(`/`)">
@@ -36,7 +32,6 @@
 </template>
 
 <script>
-import Header from '../header/header.vue'
 import Footer from '~/components/footer/Footer.vue'
 import Container from '../Container.vue'
 import BrandSlider from '../services/BrandSlider.vue'
@@ -45,7 +40,6 @@ import FavoriteProducts from '../favorite-products/FavoriteProducts.vue'
 export default {
   name: 'AllProducts',
   components: {
-    Header,
     Footer,
     Container,
     BrandSlider,

@@ -8,7 +8,7 @@
     name: "BgBlur",
     methods: {
         hideModalFunc() {
-            this.$store.dispatch("modal/hideModalFunc")
+            // this.$store.dispatch("modal/hideModalFunc")
         },
     },
 }

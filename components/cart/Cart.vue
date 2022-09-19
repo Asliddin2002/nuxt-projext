@@ -19,7 +19,7 @@ import PaymentModal from './payments/PaymentModal.vue'
 import BgBlur from './payments/BgBlur.vue'
 export default {
   name: 'Cart',
-  components: { Navbar, Footer, Services, LangBar, Container, CartItems, PaymentModal, BgBlur },
+  components: {  Footer, Services, LangBar, Container, CartItems, PaymentModal, BgBlur },
   computed: {
     modal() {
      console.log(this.$store.state.showModal);

@@ -97,7 +97,7 @@ export default {
     },
     methods: {
         hideModalFunc() {
-            this.$store.dispatch("modal/hideModalFunc")
+            // this.$store.dispatch("modal/hideModalFunc")
         },
     },
     data() {

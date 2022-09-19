@@ -22,7 +22,7 @@ import Header from '~/components/header/header.vue'
 import LogupPage from '~/components/regstration/LogupPage.vue'
 export default {
   name: 'Registration',
-  components: { Header, Navbar, Container, Footer, LogupPage },
+  components: { Header, Container, Footer, LogupPage },
   data() {
     return {
       inputData: {

@@ -1,7 +1,5 @@
 <template>
   <div class="main relative">
- 
-
     <div class="content"></div>
     <Container>
       <CategoriesSwiper />
@@ -187,6 +185,19 @@ export default {
      
     }
   },
+  methods: {
+  async  getProductsAll () {
+    
+    }
+  },
+  async fetch (ctx) {
+    // console.log(ctx, '====>>>>');
+    // await ctx.store.dispatch('getProducts')
+     await  ctx.store.dispatch('getBrands')
+     .then (res => {
+    console.log('getBrands====>>>>',res);
+     })
+  }
 }
 </script>
 
