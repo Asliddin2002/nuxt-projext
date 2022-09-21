@@ -28,7 +28,7 @@ export default {
   components: { Navbar, Footer, Services, LangBar, Container, CartItems, PaymentModal, BgBlur },
   computed: {
     modal() {
-     console.log(this.$store.state.showModal);
+    //  console.log(this.$store.state.showModal);
       return this.$store.state.modal.showModal
     },
         cart() {
