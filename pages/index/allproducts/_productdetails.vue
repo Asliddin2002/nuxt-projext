@@ -1,9 +1,9 @@
 <template>
   <div>
-    <!-- <BgBlur /> -->
+    <!-- <BgBlur v-show ="modal" /> -->
     <Container>
       <ProductDetails :details="details" />
-      <!-- <PaymentModal :cart="cart" /> -->
+      <!-- <PaymentModal :cart="cart" v-show="modal" /> -->
       <LastSeenProducts :productItems="productItems" />
       <AdvertisementProductsComponent :advertisementItems="advertisementItems" />
     </Container>
@@ -21,7 +21,9 @@ import LastSeenProducts from '~/components/lastSeenProducts/LastSeenProducts.vue
 export default {
   name: "productDetails",
 
-  components: { ProductDetails, Container, AdvertisementProductsComponent, LastSeenProducts },
+  components: { ProductDetails, Container, AdvertisementProductsComponent, LastSeenProducts, 
+    // BgBlur,PaymentModal 
+   },
   data() {
     return {
       details: null,

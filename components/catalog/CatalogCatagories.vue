@@ -40,7 +40,7 @@
               pt-0.5
             "
           >
-            <div v-for="(item, index) in categories" :key="index">
+            <div v-for="item in categories" :key="item.id">
               <div class="flex">
                 <div class="parentCat">
                   <div class="h-auto">
@@ -75,7 +75,7 @@
                   </div>
                   <div class="flex-col rounded-b">
                     <div class="SubCaregory rounded-b">
-                      <p class="text-green font-sans text font-bold mb-2 hover:text-green hover:border-b hover:border-green leading-none cursor-pointer" :key="item.index">
+                      <p class="text-green font-sans text font-bold mb-2 hover:text-green hover:border-b hover:border-green leading-none cursor-pointer" :key="item.sub_category.id">
                         <nuxt-link
                           :to="
                             localePath(`/${item.sub_category.title_name}`)
@@ -84,11 +84,11 @@
                           {{ item.sub_category.title_name }}
                         </nuxt-link>
                       </p>
-                      <ul v-for="(cat, index) in item.sub_category.products" :key="index">
+                      <ul v-for="cat in item.sub_category.products" :key="cat.id">
                         <li class="text-black text font-normal font-sans hover:text-green hover:border-b hover:border-green leading-none cursor-pointer py-0.37">
-                          <nuxt-link :to="localePath(`/${cat.product_name}`)">
+                          <!-- <nuxt-link :to="localePath(`/${cat.product_name}`)"> -->
                             {{ cat.product_name }}
-                          </nuxt-link>
+                          <!-- </nuxt-link> -->
                         </li>
                       </ul>
                     </div>
@@ -107,18 +107,158 @@
 <script>
 export default {
   name: 'CatalogCategories',
-  props: {
-    categories: {
-      type: Array | Object,
-      required: true,
-      default: () => [],
-    },
-  },
 
   data() {
     return {
       show: false,
-      log: console.log,
+      categories: [
+                {
+                    id: "57d7ec66-8c28-45d6-af4f-7f63d23de3rw",
+                    name: "Oshxona jihozlari",
+                    icon_name: "phone.png",
+                    icon_name_w: "phoneW.png",
+                    sub_category: {
+                        id: "57d7ec66-wert-45d6-af4f-7f63d23de385",
+                        title_name: "Oshxona uchun katta ",
+                        images: "",
+                        products: [
+                            {
+                                product_name: "Muzlatgichlar",
+                                id: "57d7ec66-8c28-45d6-vbnm-7f63d23de385",
+                                slug: "muzlatgichlar",
+                            },
+                            {
+                                product_name: "Gaz plitalar",
+                                id: "57d7ec66-8c28-45d6-af4f-7fz3d23de385",
+                                slug: "gaz-plitalar",
+                            },
+                            {
+                                product_name: "Mikroto'lqinli pechlar",
+                                id: "57d7ec66-8c28-45d6-af4f-7f63d23ds385",
+                                slug: "mikrotolqinli-pechlar",
+                            },
+                            {
+                                product_name: "Dudbo'ronlar",
+                                id: "57d7ec66-8c28-45d6-af4f-7f63d23deq85",
+                                slug: "dudbronlar",
+                            },
+                            {
+                                product_name: "Pechlar",
+                                id: "56d7ec66-8c28-45d6-af4f-7f63d23de385",
+                                slug: "pechlar",
+                            },
+                        ],
+                    },
+                    sub_category: {
+                        id: "57d7ec66-8c28-45d6-af4f-7f63d23dfg85",
+                        title_name: "Oshxona uchun kattasa ",
+                        images: "",
+                        products: [
+                            {
+                                product_name: "Muzlatgichlar",
+                                id: "5cv7ec66-8c28-45d6-af4f-7f63d23de385",
+                                slug: "muzlatgichlar",
+                            },
+                            {
+                                product_name: "Gaz plitalar",
+                                id: "57d7ec66-8c2m-45d6-af4f-7f63d23de385",
+                                slug: "gaz-plitalar",
+                            },
+                            {
+                                product_name: "Mikroto'lqinli pechlar",
+                                id: "57d7ec66-8c28-45d6-af4f-7f78d23de385",
+                                slug: "mikrotolqinli-pechlar",
+                            },
+                            {
+                                product_name: "Dudbo'ronlar",
+                                id: "57d7ec66-8c28-45d6-afff-7f63d23de385",
+                                slug: "dudbronlar",
+                            },
+                            {
+                                product_name: "Pechlar",
+                                id: "57djkl66-8c28-45d6-af4f-7f63d23de385",
+                                slug: "pechlar",
+                            },
+                        ],
+                    },
+                },
+                {
+                    id: "57d7ec66-8c28-67d6-af4f-7f63d23de385",
+                    name: "Oshxona jihozlari",
+                    icon_name: "phone.png",
+                    icon_name_w: "phoneW.png",
+                    sub_category: {
+                        id: "57d7ec66-8c28-45d6-af4f-7f6fgh3de385",
+                        title_name: "Oshxona uchun  texnikalar",
+                        images: "",
+                        products: [
+                            {
+                                product_name: "Muzlatgichlar",
+                                id: "57ddfghj-8c28-45d6-af4f-7f63d23de385",
+                                slug: "muzlatgichlar",
+                            },
+                            {
+                                product_name: "Gaz plitalar",
+                                id: "57d7ec66-83ef-45d6-af4f-7f63d23de385",
+                                slug: "gaz-plitalar",
+                            },
+                            {
+                                product_name: "Mikroto'lqinli pechlar",
+                                id: "57d7ec66-8c28-455t-af4f-7f63d23de385",
+                                slug: "mikrotolqinli-pechlar",
+                            },
+                            {
+                                product_name: "Dudbo'ronlar",
+                                id: "57d9ij66-8c28-45d6-af4f-7f63d23de385",
+                                slug: "dudbronlar",
+                            },
+                            {
+                                product_name: "Pechlar",
+                                id: "57d7ec66-8c28-45d6-6y4f-7f63d23de385",
+                                slug: "pechlar",
+                            },
+                        ],
+                    },
+                },
+                {
+                    id: "57dvfr66-8c28-45d6-af4f-7f63d23de385",
+                    name: "Oshxona jihozlfdfdfari",
+                    icon_name: "phone.png",
+                    icon_name_w: "phoneW.png",
+                    sub_category: {
+                        id: "57d7ec66-8c28-45d6-af4f-7f63dliue385",
+                        title_name: "uchun katta texnikalar",
+                        images: "",
+                        products: [
+                            {
+                                product_name: "Muzlatgichlar",
+                                id: "57d7ec66-8c28-4bd6-af4f-7f63d23de385",
+                                slug: "muzlatgichlar",
+                            },
+                            {
+                                product_name: "Gaz plitalar",
+                                id: "57d7ec66-8c28-45d6-af4f-7bgtr23de385",
+                                slug: "gaz-plitalar",
+                            },
+                            {
+                                product_name: "Mikroto'lqinli pechlar",
+                                id: "57d7ec66-bgfd-45d6-af4f-7f63d23de385",
+                                slug: "mikrotolqinli-pechlar",
+                            },
+                            {
+                                product_name: "Dudbo'ronlar",
+                                id: "57d7ec66-8c28-45d6-lg4f-7f63d23de385",
+                                slug: "dudbronlar",
+                            },
+                            {
+                                product_name: "Pechlar",
+                                id: "57d7ec66-8c28-45d6-af4f-4rhjd23de385",
+                                slug: "pechlar",
+                            },
+                        ],
+                    },
+                },
+            ],
 
       //   cat: item.sub_category.products,
     }

@@ -1,13 +1,5 @@
 <template>
   <div class="main relative">
-    <div>
-      <Header />
-    </div>
-
-    <div class="sticky z-50 top-0 shadow-sm">
-      <Navbar :categories="categories" />
-    </div>
-
     <div class="content"></div>
     <Container>
       <CategoriesSwiper />
@@ -21,10 +13,8 @@
       <Services />
       <LastSeenProducts :productItems="productItems.slice(0, 6)" />
     </Container>
-    <Contact />
-    <FooterVue />
-    <ScrollTopButton />
-    <FooterNavbar class="sticky" />
+   
+
   </div>
 </template>
 <script>
@@ -234,156 +224,22 @@ export default {
           img: 'advertisement1.jpg',
         },
       ],
-      categories: [
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun katta ',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-                slug: 'muzlatgichlar',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-                slug: 'gaz-plitalar',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-                slug: 'mikrotolqinli-pechlar',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-                slug: 'dudbronlar',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-                slug: 'pechlar',
-              },
-            ],
-          },
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun kattasa ',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-                slug: 'muzlatgichlar',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-                slug: 'gaz-plitalar',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-                slug: 'mikrotolqinli-pechlar',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-                slug: 'dudbronlar',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-                slug: 'pechlar',
-              },
-            ],
-          },
-        },
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun  texnikalar',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-                slug: 'muzlatgichlar',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-                slug: 'gaz-plitalar',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-                slug: 'mikrotolqinli-pechlar',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-                slug: 'dudbronlar',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-                slug: 'pechlar',
-              },
-            ],
-          },
-        },
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlfdfdfari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'uchun katta texnikalar',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-                slug: 'muzlatgichlar',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-                slug: 'gaz-plitalar',
-              },
-              {
-                product_name: "Mikroto'lqinli pechlar",
-                id: '2',
-                slug: 'mikrotolqinli-pechlar',
-              },
-              {
-                product_name: "Dudbo'ronlar",
-                id: '2',
-                slug: 'dudbronlar',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-                slug: 'pechlar',
-              },
-            ],
-          },
-        },
-      ],
+     
     }
   },
+  methods: {
+  async  getProductsAll () {
+    
+    }
+  },
+  async fetch (ctx) {
+    // console.log(ctx, '====>>>>');
+    // await ctx.store.dispatch('getProducts')
+     await  ctx.store.dispatch('getBrands')
+     .then (res => {
+    console.log('getBrands====>>>>',res);
+     })
+  }
 }
 </script>
 

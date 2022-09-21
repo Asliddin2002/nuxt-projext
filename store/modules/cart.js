@@ -1,22 +1,10 @@
-
-
-export const state = () => ({
+export default {
+state: {
     products: [],
     product: null,
     cart: []
-})
-
-export const actions = {
-    async addProductToCart({ commit }, { product, quantity }) {
-        commit('ADD_TO_CART', { product, quantity })
-    },
-    removeItem({ commit }, product) {
-        commit('REMOVE_FROM_CART', product)
-    }
-}
-
-
-export const mutations = {
+},
+mutations: {
     ADD_TO_CART(state, { product, quantity }) {
         let productInCart = state.cart?.find((item) => item.product.id === product.id)
         if (productInCart) {
@@ -37,10 +25,21 @@ export const mutations = {
         }
         state.cart = state.cart.filter((item) => item.product.id !== product.id)
     }
-}
-
-export const getters = {
+},
+getters: {
     productsInCart(state) {
         return state.cart
     }
+},
+
+actions: {
+    async addProductToCart({ commit }, { product, quantity }) {
+        commit('ADD_TO_CART', { product, quantity })
+    },
+    removeItem({ commit }, product) {
+        commit('REMOVE_FROM_CART', product)
+    }
 }
+
+}
+

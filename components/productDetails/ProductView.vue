@@ -84,13 +84,13 @@
                 <h3 class="text-sm text-blue underline cursor-pointer">Bo'lib to'lashga oling</h3>
             </div>
             <h3 class="font-semibold mt-2">To'lov usuli</h3>
-            <nuxt-link :to="localePath('/cart')">
+            <!-- <nuxt-link :to="localePath('/cart')"> -->
                 <div @click="showModal"
                     class="w-full gap-1 mt-0.4 flex py-0.5 font-semibold items-center justify-center rounded-md text-sm text-green border-2 cursor-pointer border-gray">
                     <img src="~/assets/icons_svg/Muddatli.svg" alt="bittada">
                     <span>Muddatli to'lov</span>
                 </div>
-            </nuxt-link>
+            <!-- </nuxt-link> -->
 
             <nuxt-link :to="localePath('/cart/delivery')">
                 <div
@@ -149,10 +149,10 @@ export default {
             this.activeImage = item
         },
         showModal() {
-            this.$store.dispatch("modal/showModalFunc")
+            this.$store.dispatch("showModalFunc")
         },
         addtoCart() {
-            this.$store.dispatch("cart/addProductToCart", {
+            this.$store.dispatch("addProductToCart", {
                 product: this.item,
                 quantity: 1
             })

@@ -207,8 +207,8 @@
 </template>
 
 <script>
-import CatalogCatagories from '../catalog/CatalogCatagories.vue'
-import Container from '../Container.vue'
+import CatalogCatagories from './catalog/CatalogCatagories.vue'
+import Container from './Container.vue'
 
 export default {
   name: 'Navbar',

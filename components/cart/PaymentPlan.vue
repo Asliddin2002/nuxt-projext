@@ -28,7 +28,7 @@ export default {
     name: "PaymentPlan",
     methods: {
         showModal() {
-            this.$store.dispatch("modal/showModalFunc")
+            this.$store.dispatch("showModalFunc")
         },
     },
 }

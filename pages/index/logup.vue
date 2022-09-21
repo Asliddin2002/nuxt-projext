@@ -1,9 +1,5 @@
 <template>
   <div>
-    <Header />
-    <div class="sticky z-50 top-0 shadow-sm">
-      <Navbar :categories="categories" />
-    </div>
     <Container>
       <div class="flex flex-col items-center justify-center mt-7 font-sans">
         <img src="~/assets/images/LoginImage.svg" alt="login" />
@@ -16,19 +12,17 @@
         <LogupPage :inputData="inputData" :inputValidate="inputValidate" />
       </div>
     </Container>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Navbar from '~/components/navbar/Navbar.vue'
 import Container from '~/components/Container.vue'
 import Footer from '~/components/footer/Footer.vue'
 import Header from '~/components/header/header.vue'
 import LogupPage from '~/components/regstration/LogupPage.vue'
 export default {
   name: 'Registration',
-  components: { Header, Navbar, Container, Footer, LogupPage },
+  components: { Header, Container, Footer, LogupPage },
   data() {
     return {
       inputData: {
@@ -43,107 +37,6 @@ export default {
                 firstNameValidate: false,
                 passwordConfirmationValidate: false,
             },
-        categories: [
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun katta ',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-              },
-              {
-                product_name: 'Mikroto\'lqinli pechlar',
-                id: '2',
-              },
-              {
-                product_name: 'Dudbo\'ronlar',
-                id: '2',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-              },
-            ],
-          },
-        },
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'Oshxona uchun  texnikalar',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-              },
-              {
-                product_name: 'Mikroto\'lqinli pechlar',
-                id: '2',
-              },
-              {
-                product_name: 'Dudbo\'ronlar',
-                id: '2',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-              },
-            ],
-          },
-        },
-        {
-          id: '054654654',
-          name: 'Oshxona jihozlfdfdfari',
-          icon_name: 'phone.png',
-          icon_name_w: 'phoneW.png',
-          sub_category: {
-            id: '4555567676571',
-            title_name: 'uchun katta texnikalar',
-            images: '',
-            products: [
-              {
-                product_name: 'Muzlatgichlar',
-                id: '2',
-              },
-              {
-                product_name: 'Gaz plitalar',
-                id: '2',
-              },
-              {
-                product_name: 'Mikroto\'lqinli pechlar',
-                id: '2',
-              },
-              {
-                product_name: 'Dudbo\'ronlar',
-                id: '2',
-              },
-              {
-                product_name: 'Pechlar',
-                id: '2',
-              },
-            ],
-          },
-        },
-      ],
     }
   },
 }

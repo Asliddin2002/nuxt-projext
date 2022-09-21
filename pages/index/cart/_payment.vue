@@ -1,9 +1,5 @@
 <template>
     <div>
-        <Header />
-        <div class="sticky z-50 top-0 shadow-sm">
-            <Navbar :categories="categories" />
-        </div>
         <Container>
             <h1 class="my-4 text-3xl font-semibold text-center font-sans"> <span class="text-green"> “Paymart”</span>
                 mudatli to'lov xizmati</h1>
@@ -64,13 +60,11 @@
 </template>
 
 <script>
-import Header from '~/components/header/header.vue';
-import Navbar from '~/components/navbar/Navbar.vue';
 import Footer from '~/components/footer/Footer.vue';
 import Container from '~/components/Container.vue';
 import PaymentPlan from '~/components/cart/PaymentPlan.vue';
 export default {
-    components: { Header, Navbar, Footer, Container, PaymentPlan },
+    components: { Footer, Container, PaymentPlan },
     computed: {
         cart() {
             return this.$store.state.cart?.cart
