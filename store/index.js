@@ -12,7 +12,8 @@ const createStore = () => {
           cart,
           modal,
       products: crud('products'),
-      brands: crud('brands')
+      brands: crud('brands'),
+      category: crud('categories')
     },
     getters: {
       // isAuthenticated: state => { return state.auth.loggedIn },

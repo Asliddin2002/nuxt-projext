@@ -2,13 +2,13 @@
   <div class="">
     <div class="self-center">
       <div class="shadow-sm rounded p-3 m-0.35 relative ">
-        <nuxt-link :to="localePath(`/allproducts/${item.id}`)">
+        <nuxt-link :to="localePath(`/allproducts/${item.product_id}`)">
           <div class="h-10 justify-self-center self-center flex">
-            <img :src="require(`~/assets/images/${item.img}`)" alt="product images" class="text-center m-auto mb-4" />
+            <!-- <img :src="require(`~/assets/images/${item.images[0]}`)" alt="product images" class="text-center m-auto mb-4" /> -->
           </div>
         </nuxt-link>
         <div>
-          <span v-if="item.inStock === true" class="
+          <!-- <span v-if="item?.inStock === true" class="
               absolute
               top-0.5
               left-0.5
@@ -22,7 +22,7 @@
             ">
             Yangi
           </span>
-          <span v-if="item.available === true && item.inStock === false" class="
+          <span v-if="item?.available === true && item?.inStock === false" class="
               absolute
               top-0.5
               left-0.5
@@ -36,7 +36,7 @@
             ">
             {{ item.discount }}
           </span>
-          <span v-else-if="item.available === true && item.inStock === true" class="
+          <span v-else-if="item?.available === true && item?.inStock === true" class="
               absolute
               top-0.5
               left-8.5
@@ -48,7 +48,7 @@
               font-sans font-semibold
               text-xs
             ">
-            {{ item.discount }}
+            {{ item?.discount }}
           </span>
           <span class="
               absolute
@@ -81,16 +81,16 @@
               cursor-pointer
             ">
             <img src="~/assets/images/greenHeart.svg" alt="greenHeart" />
-          </span>
-          <nuxt-link :to="localePath(`/allproducts/${item.id}`)">
+          </span> -->
+          <nuxt-link :to="localePath(`/allproducts/${item.product_id}`)">
             <h4 class="font-sans font-semibold text-sm text-black tracking-widest">
-              {{ item.name }}
+              {{ item.product_name }}
             </h4>
             <p class="font-sans font-medium text-xs text-black">
-              {{ item.description }}
+              {{ item.product_description }}
             </p>
           </nuxt-link>
-          <p class="font-sans font-bold text text-green pt-3 pb-0.5">{{ item.price }} so'm</p>
+          <p class="font-sans font-bold text text-green pt-3 pb-0.5">{{ item.product_price }} so'm</p>
           <p class="bg-gray px-0.5 py-0.35 rounded font-sans font-medium xsm:text-xsm sm:text-xs  ">
             {{ fixedPrice }} so'mdan / 24 oy
           </p>

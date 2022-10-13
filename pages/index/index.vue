@@ -5,7 +5,7 @@
       <CategoriesSwiper />
       <categories-component-vue :categoryItems="categoryItems" />
       <brands-vue :brandItems="brandItems" />
-      <popular-products-vue :productItems="productItems" />
+      <popular-products-vue :products="dataProducts" />
       <product-in-discount-vue :productItems="productItems" />
       <advertisement-products-component-vue :advertisementItems="advertisementItems" />
       <favorite-products-vue :productItems="productItems" />
@@ -32,6 +32,7 @@ import FavoriteProductsVue from '~/components/favorite-products/FavoriteProducts
 import Contact from '~/components/contact/Contact.vue'
 import LastSeenProducts from '~/components/lastSeenProducts/LastSeenProducts.vue'
 import FooterNavbar from '~/components/footer/FooterNavbar.vue'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     CategoriesComponentVue,
@@ -51,6 +52,7 @@ export default {
   },
   data() {
     return {
+      products:[],
       categoryItems: [
         { img: 'category1.svg', name: 'Telefon  va Smartfonlar' },
         { img: 'category2.svg', name: 'Orgtexnika va Kompyuterlar' },
@@ -234,13 +236,31 @@ export default {
   },
   async fetch (ctx) {
     // console.log(ctx, '====>>>>');
-    // await ctx.store.dispatch('getProducts')
+    await ctx.store.dispatch('getProducts', {
+      
+    })
+      .then (res => {
+        this.products = res
+        // console.log('getProducts====>>>>',);
+      })
      await  ctx.store.dispatch('getBrands')
      .then (res => {
-    console.log('getBrands====>>>>',res);
+    // console.log('getBrands====>>>>',res);
      })
+     await  ctx.store.dispatch('getCategories', {
+      format: 'Salom',
+     })
+     .then (res => {
+       console.log('getCategory====>>>>',res);
+     })
+  },
+  computed:{
+    ...mapGetters(["dataProducts", "dataBrands","dataCategories"])
+  },
+  mounted (){
+    console.log("dataCategories=====>",this.dataCategories)
   }
-}
+  }
 </script>
 
 
